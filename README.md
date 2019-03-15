@@ -6,7 +6,7 @@ data extracted from [who's on first](https://github.com/whosonfirst-data/whosonf
 
 ```
 select 
-group_concat( e.name || ',') n,
+group_concat( distinct e.name || ',' ) n,
 a.id,
 a.parent_id,
 a.name s,
