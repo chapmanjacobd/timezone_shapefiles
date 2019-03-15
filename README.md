@@ -6,13 +6,14 @@ data extracted from [who's on first](https://github.com/whosonfirst-data/whosonf
 
 ```
 select 
-group_concat( distinct e.name || ',' ) n,
+replace(group_concat( distinct e.name || ','),',,',',') n,
 a.id,
 a.parent_id,
+a.country,
 a.name s,
 a.placetype,
-a.country,
-a.repo,
+b.ancestor_placetype,
+b.ancestor_id,
 a.latitude,
 a.longitude,
 a.min_latitude,
@@ -26,18 +27,10 @@ a.is_superseded,
 a.is_superseding,
 a.superseded_by,
 a.supersedes,
-a.lastmodified,
-b.id,
-b.ancestor_id,
-b.ancestor_placetype,
-b.lastmodified,
-c.id,
 c.other_id,
 c.other_source,
-c.lastmodified,
-d.id,
-d.body,
-d.lastmodified
+a.lastmodified,
+d.body
 from spr a
 join names e on a.id = e.id
 join ancestors b on a.id = b.id
