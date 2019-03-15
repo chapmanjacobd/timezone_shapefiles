@@ -1,5 +1,7 @@
 # timezone_shapefiles
 
+[https://traveladdicts.unli.xyz/guestblog/timezone-shapefiles](https://traveladdicts.unli.xyz/guestblog/timezone-shapefiles)
+
 data extracted from [who's on first](https://github.com/whosonfirst-data/whosonfirst-data/blob/master/LICENSE.md)
 
 ```
